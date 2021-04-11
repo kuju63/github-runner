@@ -27,7 +27,7 @@ RUN curl -OL https://github.com/actions/runner/releases/download/v${runner_versi
 
 USER runner
 
-COPY --chown=runner: autoconf.sh autoconf.sh
-COPY --chown=runner: start.sh start.sh
+COPY --chown=runner:runner autoconf.sh autoconf.sh
+COPY --chown=runner:runner start.sh start.sh
 
 CMD [ "bash", "start.sh" ]
