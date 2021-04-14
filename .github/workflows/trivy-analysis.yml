@@ -18,17 +18,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build an image from Dockerfile
-        env:
-          ORGANIZATION: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
-          docker build -t docker.io/$ORGANIZATION/github-runner:${{ github.sha }} .
+          docker build -t "docker.io/jkurihara/github-runner:${{ github.sha }}" .
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
-        env:
-          ORGANIZATION: ${{ secrets.DOCKERHUB_USERNAME }}
         with:
-          image-ref: 'docker.io/$ORGANIZATION/github-runner:${{ github.sha }}'
+          image-ref: 'docker.io/jkurihara/github-runner:${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
