@@ -25,10 +25,8 @@ jobs:
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
-        env:
-          ORGANIZATION: ${{ secrets.DOCKERHUB_USERNAME }}
         with:
-          image-ref: "docker.io/$ORGANIZATION/github-runner:${{ github.sha }}"
+          image-ref: 'docker.io/${{ secrets.ORGANIZATION }}/github-runner:${{ github.sha }}'
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
