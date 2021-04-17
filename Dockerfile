@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster
 
 ENV http_proxy="" \
     https_proxy="" \
