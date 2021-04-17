@@ -11,7 +11,7 @@ ENV http_proxy="" \
 WORKDIR /actions-runner
 
 RUN apt-get update && \
-    apt-get install apt-utils --no-install-recommends && \
+    apt-get install -y apt-utils --no-install-recommends && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y ca-certificates curl expect --no-install-recommends && \
