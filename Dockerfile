@@ -11,6 +11,7 @@ ENV http_proxy="" \
 WORKDIR /actions-runner
 
 RUN apt-get update && \
+    apt-get upgrade -y && \
     apt-get install -y ca-certificates curl expect --no-install-recommends && \
     apt-get autoremove -y && \
     rm -rf /var/cache/apt/* && \
