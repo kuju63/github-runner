@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:stable
 
 ENV http_proxy="" \
     https_proxy="" \
