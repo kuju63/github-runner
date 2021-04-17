@@ -11,6 +11,8 @@ ENV http_proxy="" \
 WORKDIR /actions-runner
 
 RUN apt-get update && \
+    apt-get install apt-utils --no-install-recommends && \
+    apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y ca-certificates curl expect --no-install-recommends && \
     apt-get autoremove -y && \
@@ -24,6 +26,8 @@ RUN curl -OL https://github.com/actions/runner/releases/download/v${runner_versi
     tar xzf ./actions-runner-linux-${runner_architecture}-${runner_version}.tar.gz && \
     rm actions-runner-linux-${runner_architecture}-${runner_version}.tar.gz && \
     ./bin/installdependencies.sh && \
+    apt-get autoremove -y && \
+    rm -rf /var/cache/apt/* && \
     chown runner: /actions-runner
 
 USER runner
