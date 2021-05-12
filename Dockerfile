@@ -6,7 +6,8 @@ ENV http_proxy="" \
     token_file="/run/secrets/gh_token" \
     owner="" \
     repo_name="" \
-    runner_name=""
+    runner_name="" \
+    label=""
 
 WORKDIR /actions-runner
 
