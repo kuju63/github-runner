@@ -17,13 +17,21 @@ if [ -z "${repo_name}" ]; then
   exit 1
 fi
 
+local LABEL=""
+
+if [ -z "${label}" ]; then
+  LABEL=""
+else
+  LABEL="${label}"
+fi
+
 expect -c "
 set timeout 10
 spawn ./config.sh --url https://github.com/${owner}/${repo_name} --token ${TOKEN}
 expect \"Enter the name of runner:\"
 send \"${runner_name}\n\"
 expect \"Enter any additional labels (ex. label-1,label-2):\"
-send \"\n\"
+send \"${LABEL}\n\"
 expect \"Enter name of work folder:\"
 send \"\n\"
 expect \"$\"
