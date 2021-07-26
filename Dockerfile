@@ -18,7 +18,7 @@ RUN apt-get update && \
     rm -rf /var/cache/apt/* && \
     adduser --disabled-password --gecos "" runner
 
-ARG runner_version="2.278.0"
+ARG runner_version="2.279.0"
 ARG runner_architecture="x64"
 
 RUN curl -OL https://github.com/actions/runner/releases/download/v${runner_version}/actions-runner-linux-${runner_architecture}-${runner_version}.tar.gz && \
