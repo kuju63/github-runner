@@ -7,7 +7,8 @@ ENV http_proxy="" \
     owner="" \
     repo_name="" \
     runner_name="" \
-    label=""
+    label="" \
+    group=""
 
 WORKDIR /actions-runner
 
