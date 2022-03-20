@@ -8,7 +8,8 @@ ENV http_proxy="" \
     repo_name="" \
     runner_name="" \
     label="" \
-    group=""
+    group="" \
+    tls_no_verify=0
 
 WORKDIR /actions-runner
 

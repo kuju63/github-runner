@@ -31,6 +31,8 @@ else
   GROUP="${group}"
 fi
 
+echo "TLS verify setting ${GITHUB_ACTIONS_RUNNER_TLS_NO_VERIFY}"
+
 expect -c "
 set timeout 10
 spawn ./config.sh --url https://github.com/${owner}/${repo_name} --token ${TOKEN}

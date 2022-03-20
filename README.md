@@ -55,3 +55,7 @@ Labeled to Self-Hosted-runner. Details see [here](https://docs.github.com/en/act
 ### group [Optional]
 
 Add runner to specified self-hosted runner group. Self-hosted runner group is using Organization only.
+
+### tls_no_verify[Optional]
+
+Disable verify process for SSL/TLS. When Proxy server using self-signed certificate, this option is need to set "1".
