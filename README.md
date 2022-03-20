@@ -59,3 +59,10 @@ Add runner to specified self-hosted runner group. Self-hosted runner group is us
 ### tls_no_verify[Optional]
 
 Disable verify process for SSL/TLS. When Proxy server using self-signed certificate, this option is need to set "1".
+
+### disable_auto_update [Optional]
+
+Opt-out auto-update to the latest runner version. Use this option, this is need to set "0".
+actions/runner
+
+Details see [GitHub Docs (Controlling runner software updates on self-hosted runners)](https://docs.github.com/en/actions/hosting-your-own-runners/autoscaling-with-self-hosted-runners#controlling-runner-software-updates-on-self-hosted-runners)
