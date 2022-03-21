@@ -26,14 +26,20 @@ if [ ! -f "./.credentials" ]; then
     bash ./autoconf.sh
 fi
 
+DISABLE_UPDATE=""
+if [ "${disable_auto_update}" = "1" ]; then
+  DISABLE_UPDATE="--disableupdate"
+  echo "Opt-out auto update"
+fi
+
 shutdown_handler() {
     echo "Start shutdown process"
     ./config.sh remove --token "$TOKEN"
 }
 
-./run.sh &
+./run.sh $DISABLE_UPDATE &
 pid="$!"
-trap '"shutdown_handler $pid"' SIGTERM
+trap 'shutdown_handler' $pid 2 3 15
 while kill -0 $pid > /dev/null 2>&1; do
     wait
 done

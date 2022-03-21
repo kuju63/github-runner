@@ -9,7 +9,8 @@ ENV http_proxy="" \
     runner_name="" \
     label="" \
     group="" \
-    tls_no_verify=0
+    tls_no_verify=0 \
+    disable_auto_update=0
 
 WORKDIR /actions-runner
 
